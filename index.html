@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZEKA — Packaging timeline & payment tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --paper: #faf7f1;
+    --card: #ffffff;
+    --ink: #20261f;
+    --ink-soft: #5c6358;
+    --line: #ddd6c5;
+    --accent: #c1652e;
+    --done: #3f6f4f;
+    --done-bg: #e7efe6;
+    --progress: #c1652e;
+    --progress-bg: #f5e6d9;
+    --idle: #95988a;
+    --idle-bg: #efece2;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 18px 72px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 560;
+    font-size: clamp(24px, 5vw, 32px);
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .updated { font-size: 13px; color: var(--ink-soft); }
+  button.refresh {
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  button.refresh:hover { border-color: var(--accent); }
+  button.refresh:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button.refresh:disabled { opacity: 0.6; cursor: default; }
+
+  h2.section-title {
+    font-family: "Fraunces", serif;
+    font-weight: 560;
+    font-size: 18px;
+    margin: 36px 0 14px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 12px;
+  }
+  .stat .num {
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .stat .label { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+  .stat.done .num { color: var(--done); }
+  .stat.progress .num { color: var(--accent); }
+
+  .overall-bar {
+    height: 8px;
+    background: var(--progress-bg);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .overall-bar > div {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+  }
+  .overall-label { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 4px; }
+
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px; top: 8px; bottom: 8px;
+    border-left: 2px dashed var(--line);
+  }
+
+  details.phase {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+  }
+  details.phase[open] { border-color: var(--accent); }
+  details.phase::before {
+    content: "";
+    position: absolute;
+    left: -26px; top: 24px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--idle);
+    border: 2px solid var(--paper);
+  }
+  details.phase.completed::before { background: var(--done); }
+  details.phase.in_progress::before { background: var(--accent); }
+
+  details.phase > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 15px 18px;
+  }
+  details.phase > summary::-webkit-details-marker { display: none; }
+  details.phase > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .phase-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .phase-name-wrap { min-width: 0; }
+  .phase-name {
+    font-family: "Fraunces", serif;
+    font-weight: 560;
+    font-size: 16.5px;
+    margin: 0 0 2px;
+  }
+  .phase-date { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .current-flag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-left: 8px;
+  }
+
+  .badge {
+    flex-shrink: 0;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge.completed { background: var(--done-bg); color: var(--done); }
+  .badge.in_progress { background: var(--progress-bg); color: var(--progress); }
+  .badge.not_started { background: var(--idle-bg); color: var(--idle); }
+
+  .phase-bar {
+    height: 5px;
+    background: var(--idle-bg);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 12px 0 6px;
+  }
+  .phase-bar > div { height: 100%; border-radius: 999px; background: var(--accent); }
+  details.phase.completed .phase-bar > div { background: var(--done); }
+  .phase-count { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .chevron {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+  }
+
+  ul.task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 18px 16px;
+  }
+  ul.task-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 13.5px;
+    padding: 7px 0;
+    border-top: 1px dashed var(--line);
+  }
+  ul.task-list li .mark { color: var(--idle); flex-shrink: 0; }
+  ul.task-list li.done .mark { color: var(--done); }
+  ul.task-list li.done .task-name { color: var(--ink-soft); text-decoration: line-through; }
+  ul.task-list li .task-name { flex: 1; }
+  ul.task-list li .due { color: var(--ink-soft); font-size: 12px; flex-shrink: 0; }
+
+  .payment-list { display: flex; flex-direction: column; gap: 10px; }
+  .payment-row {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .payment-percent {
+    font-family: "Fraunces", serif;
+    font-weight: 560;
+    font-size: 22px;
+    color: var(--accent);
+    width: 56px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .payment-info { flex: 1; min-width: 0; }
+  .payment-title { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .payment-condition { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .payment-due { font-size: 12px; color: var(--ink-soft); margin: 3px 0 0; }
+
+  .note {
+    margin-top: 32px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  .state-msg {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+  .state-msg button { margin-top: 12px; }
+
+  @media (max-width: 420px) {
+    .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .stat .num { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">ZEKA · Packaging production</p>
+  <h1>ความคืบหน้าโปรเจกต์</h1>
+  <div class="meta-row">
+    <span class="updated" id="updated-text">กำลังโหลดข้อมูล...</span>
+    <button class="refresh" id="refresh-btn" type="button">รีเฟรช</button>
+  </div>
+
+  <div id="content">
+    <div class="state-msg">กำลังโหลดข้อมูล...</div>
+  </div>
+
+  <p class="note">อัปเดตข้อมูลจาก Asana โดยอัตโนมัติทุก ~15 นาที</p>
+</div>
+
+<script>
+  const DATA_URL = "./data.json";
+
+  const statusLabel = {
+    completed: "เสร็จแล้ว",
+    in_progress: "กำลังดำเนินการ",
+    not_started: "ยังไม่เริ่ม",
+  };
+
+  const dtfShort = new Intl.DateTimeFormat("th-TH-u-ca-buddhist", {
+    day: "numeric",
+    month: "short",
+    year: "2-digit",
+  });
+  const dtfFull = new Intl.DateTimeFormat("th-TH-u-ca-buddhist", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  function formatDateShort(iso) {
+    if (!iso) return "";
+    return dtfShort.format(new Date(iso + "T12:00:00+07:00"));
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function paymentStatus(m) {
+    if (m.completed) return { key: "completed", label: "ชำระแล้ว" };
+    const due = new Date(m.due_on + "T23:59:59+07:00");
+    if (due.getTime() < Date.now()) {
+      return { key: "in_progress", label: "ถึงกำหนดแล้ว" };
+    }
+    return { key: "not_started", label: "ยังไม่ถึงรอบ" };
+  }
+
+  function renderPhase(phase) {
+    const pct = phase.total_tasks
+      ? Math.round((phase.completed_tasks / phase.total_tasks) * 100)
+      : 0;
+    const tasksHtml = phase.tasks
+      .map(
+        (t) => `
+        <li class="${t.completed ? "done" : ""}">
+          <span class="mark">${t.completed ? "✓" : "○"}</span>
+          <span class="task-name">${escapeHtml(t.name)}</span>
+          <span class="due">${formatDateShort(t.due_on)}</span>
+        </li>`
+      )
+      .join("");
+
+    return `
+      <details class="phase ${phase.status}">
+        <summary>
+          <div class="phase-top">
+            <div class="phase-name-wrap">
+              <p class="phase-name">${escapeHtml(phase.name)}${
+      phase.is_current ? '<span class="current-flag">● ตอนนี้</span>' : ""
+    }</p>
+              <p class="phase-date">${escapeHtml(phase.date_range || "")}</p>
+            </div>
+            <span class="badge ${phase.status}">${statusLabel[phase.status]}</span>
+          </div>
+          <div class="phase-bar"><div style="width:${pct}%"></div></div>
+          <p class="phase-count">${phase.completed_tasks}/${phase.total_tasks} งานเสร็จแล้ว</p>
+          <span class="chevron">แตะเพื่อดูรายละเอียดงาน</span>
+        </summary>
+        <ul class="task-list">${tasksHtml}</ul>
+      </details>`;
+  }
+
+  function renderPayment(m) {
+    const status = paymentStatus(m);
+    return `
+      <div class="payment-row">
+        <div class="payment-percent">${m.percent}%</div>
+        <div class="payment-info">
+          <p class="payment-title">งวดที่ ${m.installment}</p>
+          <p class="payment-condition">${escapeHtml(m.condition)}</p>
+          <p class="payment-due">กำหนดประมาณ ${formatDateShort(m.due_on)}</p>
+        </div>
+        <span class="badge ${status.key}">${status.label}</span>
+      </div>`;
+  }
+
+  function render(data) {
+    document.title = data.project_name;
+    document.getElementById("updated-text").textContent =
+      "อัปเดตล่าสุด " + dtfFull.format(new Date(data.last_updated));
+
+    const s = data.summary;
+    const phasesHtml = data.phases.map(renderPhase).join("");
+    const paymentsHtml = (data.payment_milestones || [])
+      .map(renderPayment)
+      .join("");
+
+    document.getElementById("content").innerHTML = `
+      <div class="stats">
+        <div class="stat"><div class="num">${s.total_tasks}</div><div class="label">งานทั้งหมด</div></div>
+        <div class="stat progress"><div class="num">${s.remaining_tasks}</div><div class="label">คงเหลือ</div></div>
+        <div class="stat done"><div class="num">${s.completed_tasks}</div><div class="label">เสร็จแล้ว</div></div>
+      </div>
+      <p class="overall-label">ความคืบหน้าโดยรวม ${s.percent_complete}%</p>
+      <div class="overall-bar"><div style="width:${s.percent_complete}%"></div></div>
+
+      <h2 class="section-title">เส้นทางการผลิต</h2>
+      <div class="timeline">${phasesHtml}</div>
+
+      ${
+        paymentsHtml
+          ? `<h2 class="section-title">แผนการชำระเงิน</h2>
+             <div class="payment-list">${paymentsHtml}</div>`
+          : ""
+      }
+    `;
+  }
+
+  function showError() {
+    document.getElementById("content").innerHTML = `
+      <div class="state-msg">
+        ไม่สามารถโหลดข้อมูลได้ในขณะนี้<br />
+        <button class="refresh" type="button" onclick="load()">ลองอีกครั้ง</button>
+      </div>`;
+    document.getElementById("updated-text").textContent = "โหลดข้อมูลไม่สำเร็จ";
+  }
+
+  async function load() {
+    const btn = document.getElementById("refresh-btn");
+    btn.disabled = true;
+    btn.textContent = "กำลังโหลด...";
+    try {
+      const res = await fetch(DATA_URL + "?t=" + Date.now());
+      if (!res.ok) throw new Error("fetch failed");
+      const data = await res.json();
+      render(data);
+    } catch (err) {
+      showError();
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "รีเฟรช";
+    }
+  }
+
+  document.getElementById("refresh-btn").addEventListener("click", load);
+  load();
+</script>
+</body>
+</html>
