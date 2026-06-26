@@ -1,23 +1,23 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-06-26T03:51:18.396Z",
+  "last_updated": "2026-06-26T04:31:42.576Z",
   "summary": {
     "total_tasks": 18,
-    "completed_tasks": 0,
-    "remaining_tasks": 18,
-    "percent_complete": 0
+    "completed_tasks": 1,
+    "remaining_tasks": 17,
+    "percent_complete": 6
   },
   "phases": [
     {
       "name": "Phase 1 — รับ Brief & Dieline",
       "date_range": "29 มิ.ย. – 3 ก.ค. 69",
       "total_tasks": 3,
-      "completed_tasks": 0,
-      "status": "not_started",
+      "completed_tasks": 1,
+      "status": "in_progress",
       "tasks": [
         {
           "name": "รับ brief ลูกค้า และยืนยัน spec สินค้าทุก SKU (ทั้ง 11 รายการ, 3 กลุ่ม)",
-          "completed": false,
+          "completed": true,
           "due_on": "2026-06-30"
         },
         {
