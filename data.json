@@ -1,6 +1,6 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-06-26T03:00:00.000Z",
+  "last_updated": "2026-06-26T03:51:18.396Z",
   "summary": {
     "total_tasks": 18,
     "completed_tasks": 0,
@@ -14,12 +14,24 @@
       "total_tasks": 3,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": true,
       "tasks": [
-        { "name": "รับ brief ลูกค้า และยืนยัน spec สินค้าทุก SKU (ทั้ง 11 รายการ, 3 กลุ่ม)", "completed": false, "due_on": "2026-06-30" },
-        { "name": "รวบรวม Dieline / ขนาดบรรจุ ทุกรูปแบบ (ซอง, ถุง, กล่อง, กระปุก, หลอด)", "completed": false, "due_on": "2026-07-02" },
-        { "name": "รวบรวมข้อมูลฉลาก และข้อมูล อย. เบื้องต้น", "completed": false, "due_on": "2026-07-03" }
-      ]
+        {
+          "name": "รับ brief ลูกค้า และยืนยัน spec สินค้าทุก SKU (ทั้ง 11 รายการ, 3 กลุ่ม)",
+          "completed": false,
+          "due_on": "2026-06-30"
+        },
+        {
+          "name": "รวบรวม Dieline / ขนาดบรรจุ ทุกรูปแบบ (ซอง, ถุง, กล่อง, กระปุก, หลอด)",
+          "completed": false,
+          "due_on": "2026-07-02"
+        },
+        {
+          "name": "รวบรวมข้อมูลฉลาก และข้อมูล อย. เบื้องต้น",
+          "completed": false,
+          "due_on": "2026-07-03"
+        }
+      ],
+      "is_current": true
     },
     {
       "name": "Phase 2 — ออกแบบ & Present กลุ่ม 1",
@@ -27,11 +39,19 @@
       "total_tasks": 2,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": false,
       "tasks": [
-        { "name": "ออกแบบ Artwork กลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)", "completed": false, "due_on": "2026-07-13" },
-        { "name": "Present & รับ Feedback ลูกค้า กลุ่ม 1 (2 วัน)", "completed": false, "due_on": "2026-07-15" }
-      ]
+        {
+          "name": "ออกแบบ Artwork กลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
+          "completed": false,
+          "due_on": "2026-07-13"
+        },
+        {
+          "name": "Present & รับ Feedback ลูกค้า กลุ่ม 1 (2 วัน)",
+          "completed": false,
+          "due_on": "2026-07-15"
+        }
+      ],
+      "is_current": false
     },
     {
       "name": "Phase 3 — ออกแบบ กลุ่ม 2 + Revision กลุ่ม 1",
@@ -39,12 +59,24 @@
       "total_tasks": 3,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": false,
       "tasks": [
-        { "name": "Revision กลุ่ม 1 (6 working days, มีหยุดยาว 28–30 ก.ค.)", "completed": false, "due_on": "2026-07-22" },
-        { "name": "ออกแบบ Artwork กลุ่ม 2: Oatmeal, Cod Crisps, Crunch Rings, Hazelnuts (ใหม่)", "completed": false, "due_on": "2026-07-22" },
-        { "name": "✓ Sign-off กลุ่ม 1", "completed": false, "due_on": "2026-07-22" }
-      ]
+        {
+          "name": "Revision กลุ่ม 1 (6 working days, มีหยุดยาว 28–30 ก.ค.)",
+          "completed": false,
+          "due_on": "2026-07-22"
+        },
+        {
+          "name": "ออกแบบ Artwork กลุ่ม 2: Oatmeal, Cod Crisps, Crunch Rings, Hazelnuts (ใหม่)",
+          "completed": false,
+          "due_on": "2026-07-22"
+        },
+        {
+          "name": "✓ Sign-off กลุ่ม 1",
+          "completed": false,
+          "due_on": "2026-07-22"
+        }
+      ],
+      "is_current": false
     },
     {
       "name": "Phase 4 — Present กลุ่ม 2 + ออกแบบ กลุ่ม 3",
@@ -52,12 +84,24 @@
       "total_tasks": 3,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": false,
       "tasks": [
-        { "name": "Present & รับ Feedback ลูกค้า กลุ่ม 2", "completed": false, "due_on": "2026-07-23" },
-        { "name": "ออกแบบ Artwork กลุ่ม 3: Coffee Candy, Lozenges, Sandwich Cookies (ใหม่) (6 วัน)", "completed": false, "due_on": "2026-07-30" },
-        { "name": "Revision กลุ่ม 2 (5 วัน)", "completed": false, "due_on": "2026-07-30" }
-      ]
+        {
+          "name": "Present & รับ Feedback ลูกค้า กลุ่ม 2",
+          "completed": false,
+          "due_on": "2026-07-23"
+        },
+        {
+          "name": "ออกแบบ Artwork กลุ่ม 3: Coffee Candy, Lozenges, Sandwich Cookies (ใหม่) (6 วัน)",
+          "completed": false,
+          "due_on": "2026-07-30"
+        },
+        {
+          "name": "Revision กลุ่ม 2 (5 วัน)",
+          "completed": false,
+          "due_on": "2026-07-30"
+        }
+      ],
+      "is_current": false
     },
     {
       "name": "Phase 5 — Finalize & Revision รอบสุดท้าย ทุกกลุ่ม",
@@ -65,13 +109,29 @@
       "total_tasks": 4,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": false,
       "tasks": [
-        { "name": "Sign-off กลุ่ม 1 → Finalize Artwork", "completed": false, "due_on": "2026-08-05" },
-        { "name": "Sign-off กลุ่ม 2 → Finalize Artwork", "completed": false, "due_on": "2026-08-14" },
-        { "name": "Present กลุ่ม 3 → Revision → Sign-off กลุ่ม 3 → Finalize", "completed": false, "due_on": "2026-08-21" },
-        { "name": "เตรียมเอกสาร อย. ทุกกลุ่ม (ดำเนินการคู่ขนาน)", "completed": false, "due_on": "2026-08-28" }
-      ]
+        {
+          "name": "Sign-off กลุ่ม 1 → Finalize Artwork",
+          "completed": false,
+          "due_on": "2026-08-05"
+        },
+        {
+          "name": "Sign-off กลุ่ม 2 → Finalize Artwork",
+          "completed": false,
+          "due_on": "2026-08-14"
+        },
+        {
+          "name": "Present กลุ่ม 3 → Revision → Sign-off กลุ่ม 3 → Finalize",
+          "completed": false,
+          "due_on": "2026-08-21"
+        },
+        {
+          "name": "เตรียมเอกสาร อย. ทุกกลุ่ม (ดำเนินการคู่ขนาน)",
+          "completed": false,
+          "due_on": "2026-08-28"
+        }
+      ],
+      "is_current": false
     },
     {
       "name": "Phase 6 — ยื่น อย. ครบทุกกลุ่ม",
@@ -79,17 +139,47 @@
       "total_tasks": 3,
       "completed_tasks": 0,
       "status": "not_started",
-      "is_current": false,
       "tasks": [
-        { "name": "G1: กลุ่ม 1 ยื่น อย. (WD30)", "completed": false, "due_on": "2026-08-13" },
-        { "name": "G2: กลุ่ม 2 ยื่น อย. (WD38)", "completed": false, "due_on": "2026-08-25" },
-        { "name": "G3: กลุ่ม 3 ยื่น อย. (WD44)", "completed": false, "due_on": "2026-09-03" }
-      ]
+        {
+          "name": "G1: กลุ่ม 1 ยื่น อย. (WD30)",
+          "completed": false,
+          "due_on": "2026-08-13"
+        },
+        {
+          "name": "G2: กลุ่ม 2 ยื่น อย. (WD38)",
+          "completed": false,
+          "due_on": "2026-08-25"
+        },
+        {
+          "name": "G3: กลุ่ม 3 ยื่น อย. (WD44)",
+          "completed": false,
+          "due_on": "2026-09-03"
+        }
+      ],
+      "is_current": false
     }
   ],
   "payment_milestones": [
-    { "installment": 1, "percent": 40, "condition": "เริ่ม Project", "due_on": "2026-06-29", "completed": false },
-    { "installment": 2, "percent": 30, "condition": "หลัง Sign-off กลุ่ม 1", "due_on": "2026-07-28", "completed": false },
-    { "installment": 3, "percent": 30, "condition": "หลังยื่น อย. ครบทุกกลุ่ม", "due_on": "2026-09-03", "completed": false }
+    {
+      "installment": 1,
+      "percent": 40,
+      "condition": "เริ่ม Project",
+      "due_on": "2026-06-29",
+      "completed": false
+    },
+    {
+      "installment": 2,
+      "percent": 30,
+      "condition": "หลัง Sign-off กลุ่ม 1",
+      "due_on": "2026-07-28",
+      "completed": false
+    },
+    {
+      "installment": 3,
+      "percent": 30,
+      "condition": "หลังยื่น อย. ครบทุกกลุ่ม",
+      "due_on": "2026-09-03",
+      "completed": false
+    }
   ]
 }
