@@ -1,23 +1,23 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-06-29T22:43:25.570Z",
+  "last_updated": "2026-06-30T10:44:24.964Z",
   "summary": {
     "total_tasks": 18,
-    "completed_tasks": 1,
-    "remaining_tasks": 17,
-    "percent_complete": 6
+    "completed_tasks": 0,
+    "remaining_tasks": 18,
+    "percent_complete": 0
   },
   "phases": [
     {
       "name": "Phase 1 — รับ Brief & Dieline",
       "date_range": "29 มิ.ย. – 3 ก.ค. 69",
       "total_tasks": 3,
-      "completed_tasks": 1,
-      "status": "in_progress",
+      "completed_tasks": 0,
+      "status": "not_started",
       "tasks": [
         {
           "name": "รับ brief ลูกค้า และยืนยัน spec สินค้าทุก SKU (ทั้ง 11 รายการ, 3 กลุ่ม)",
-          "completed": true,
+          "completed": false,
           "due_on": "2026-06-30"
         },
         {
@@ -41,7 +41,7 @@
       "status": "not_started",
       "tasks": [
         {
-          "name": "ออกแบบ Artwork กลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
+          "name": "ออกแบบกลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
           "completed": false,
           "due_on": "2026-07-13"
         },
