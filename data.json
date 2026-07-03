@@ -1,6 +1,6 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-07-02T20:44:16.489Z",
+  "last_updated": "2026-07-03T08:38:09.401Z",
   "summary": {
     "total_tasks": 18,
     "completed_tasks": 0,
@@ -165,7 +165,7 @@
       "percent": 40,
       "condition": "เริ่ม Project",
       "due_on": "2026-06-29",
-      "completed": false
+      "completed": true
     },
     {
       "installment": 2,
