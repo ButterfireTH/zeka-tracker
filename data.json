@@ -1,6 +1,6 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-08-03T07:31:43.754Z",
+  "last_updated": "2026-08-03T08:40:54.198Z",
   "summary": {
     "total_tasks": 18,
     "completed_tasks": 0,
@@ -46,16 +46,16 @@
         {
           "name": "ออกแบบกลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
           "completed": false,
-          "due_on": "2026-07-13",
+          "due_on": null,
           "subtasks": [
             {
               "name": "Matcha Lime Flowing Crisp (Mass): ซองใหญ่ + ซองย่อย",
-              "completed": false,
+              "completed": true,
               "due_on": "2026-08-03"
             },
             {
               "name": "Matcha Rice Crackers (Mass): ซองใหญ่",
-              "completed": false,
+              "completed": true,
               "due_on": "2026-08-03"
             },
             {
@@ -96,7 +96,18 @@
           "name": "ออกแบบ Artwork กลุ่ม 2: Oatmeal, Cod Crisps, Crunch Rings, Hazelnuts (ใหม่)",
           "completed": false,
           "due_on": null,
-          "subtasks": []
+          "subtasks": [
+            {
+              "name": "Oatmeal, Cod Crisps",
+              "completed": false,
+              "due_on": null
+            },
+            {
+              "name": "Crunch Rings, Hazelnuts",
+              "completed": false,
+              "due_on": null
+            }
+          ]
         },
         {
           "name": "✓ Sign-off กลุ่ม 1",
