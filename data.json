@@ -1,6 +1,6 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-08-03T04:53:05.830Z",
+  "last_updated": "2026-08-03T07:31:43.754Z",
   "summary": {
     "total_tasks": 18,
     "completed_tasks": 0,
@@ -18,17 +18,20 @@
         {
           "name": "รับ brief ลูกค้า สินค้าทุก SKU (ทั้ง 11 รายการ, 3 กลุ่ม)",
           "completed": false,
-          "due_on": "2026-06-30"
+          "due_on": "2026-06-30",
+          "subtasks": []
         },
         {
           "name": "รวบรวม Dieline / ขนาดบรรจุ ทุกรูปแบบ (ซอง, ถุง, กล่อง, กระปุก, หลอด)",
           "completed": false,
-          "due_on": "2026-07-02"
+          "due_on": "2026-07-02",
+          "subtasks": []
         },
         {
           "name": "รวบรวมข้อมูลฉลาก และข้อมูล อย. เบื้องต้น",
           "completed": false,
-          "due_on": "2026-07-03"
+          "due_on": "2026-07-03",
+          "subtasks": []
         }
       ],
       "is_current": true
@@ -43,12 +46,35 @@
         {
           "name": "ออกแบบกลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
           "completed": false,
-          "due_on": "2026-07-13"
+          "due_on": "2026-07-13",
+          "subtasks": [
+            {
+              "name": "Matcha Lime Flowing Crisp (Mass): ซองใหญ่ + ซองย่อย",
+              "completed": false,
+              "due_on": "2026-08-03"
+            },
+            {
+              "name": "Matcha Rice Crackers (Mass): ซองใหญ่",
+              "completed": false,
+              "due_on": "2026-08-03"
+            },
+            {
+              "name": "Matcha Latte Milk Sticks (Mass): ซองใหญ่ + ซองย่อย",
+              "completed": true,
+              "due_on": "2026-07-23"
+            },
+            {
+              "name": "Matcha Corn Crisps (Mass): ซองแยก 3 รสชาติ (มัทฉะ / ช็อกโกแลต / ทุเรียน) เลือกเป็น style A",
+              "completed": true,
+              "due_on": "2026-07-07"
+            }
+          ]
         },
         {
           "name": "Present & รับ Feedback ลูกค้า กลุ่ม 1 (2 วัน)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         }
       ],
       "is_current": false
@@ -63,17 +89,20 @@
         {
           "name": "Revision กลุ่ม 1 (6 working days, มีหยุดยาว 28–30 ก.ค.)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "ออกแบบ Artwork กลุ่ม 2: Oatmeal, Cod Crisps, Crunch Rings, Hazelnuts (ใหม่)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "✓ Sign-off กลุ่ม 1",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         }
       ],
       "is_current": false
@@ -88,17 +117,20 @@
         {
           "name": "Present & รับ Feedback ลูกค้า กลุ่ม 2",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "ออกแบบ Artwork กลุ่ม 3: Coffee Candy, Lozenges, Sandwich Cookies (ใหม่) (6 วัน)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "Revision กลุ่ม 2 (5 วัน)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         }
       ],
       "is_current": false
@@ -113,22 +145,26 @@
         {
           "name": "Sign-off กลุ่ม 1 → Finalize Artwork",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "Sign-off กลุ่ม 2 → Finalize Artwork",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "Present กลุ่ม 3 → Revision → Sign-off กลุ่ม 3 → Finalize",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "เตรียมเอกสาร อย. ทุกกลุ่ม (ดำเนินการคู่ขนาน)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         }
       ],
       "is_current": false
@@ -143,17 +179,20 @@
         {
           "name": "G1: กลุ่ม 1 ยื่น อย. (WD30)",
           "completed": false,
-          "due_on": null
+          "due_on": null,
+          "subtasks": []
         },
         {
           "name": "G2: กลุ่ม 2 ยื่น อย. (WD38)",
           "completed": false,
-          "due_on": "2026-08-25"
+          "due_on": "2026-08-25",
+          "subtasks": []
         },
         {
           "name": "G3: กลุ่ม 3 ยื่น อย. (WD44)",
           "completed": false,
-          "due_on": "2026-09-03"
+          "due_on": "2026-09-03",
+          "subtasks": []
         }
       ],
       "is_current": false
