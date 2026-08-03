@@ -99,19 +99,41 @@ async function main() {
 
     if (normalTasks.length === 0) continue;
 
-    const completedCount = normalTasks.filter((t) => t.completed).length;
+    // Fetch subtasks for each task that has them
+    const tasksWithSubs = await Promise.all(
+      normalTasks.map(async (task) => {
+        const detail = await asanaGet(
+          `/tasks/${task.gid}?opt_fields=num_subtasks`
+        );
+        let subtasks = [];
+        if (detail.num_subtasks > 0) {
+          const subs = await asanaGet(
+            `/tasks/${task.gid}/subtasks?opt_fields=name,completed,due_on&limit=100`
+          );
+          subtasks = subs.map((s) => ({
+            name: s.name,
+            completed: s.completed,
+            due_on: s.due_on,
+          }));
+        }
+        return { ...task, subtasks };
+      })
+    );
+
+    const completedCount = tasksWithSubs.filter((t) => t.completed).length;
     const { title, dateRange } = splitSectionName(section.name);
 
     phases.push({
       name: title,
       date_range: dateRange,
-      total_tasks: normalTasks.length,
+      total_tasks: tasksWithSubs.length,
       completed_tasks: completedCount,
-      status: phaseStatus(normalTasks.length, completedCount),
-      tasks: normalTasks.map((t) => ({
+      status: phaseStatus(tasksWithSubs.length, completedCount),
+      tasks: tasksWithSubs.map((t) => ({
         name: t.name,
         completed: t.completed,
         due_on: t.due_on,
+        subtasks: t.subtasks,
       })),
     });
 
