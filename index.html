@@ -226,6 +226,24 @@
   ul.task-list li .task-name { flex: 1; }
   ul.task-list li .due { color: var(--ink-soft); font-size: 12px; flex-shrink: 0; }
 
+  ul.subtask-list {
+    list-style: none;
+    margin: 4px 0 0 20px;
+    padding: 0;
+  }
+  ul.subtask-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 3px 0;
+    border-top: none;
+  }
+  ul.subtask-list li.done { color: var(--idle); text-decoration: line-through; }
+  ul.subtask-list li .mark { color: var(--idle); flex-shrink: 0; font-size: 11px; }
+  ul.subtask-list li.done .mark { color: var(--done); }
+
   .payment-list { display: flex; flex-direction: column; gap: 10px; }
   .payment-row {
     background: var(--card);
@@ -287,7 +305,7 @@
     <div class="state-msg">กำลังโหลดข้อมูล...</div>
   </div>
 
-  <p class="note">อัปเดตข้อมูลจาก Asana วันละ 3 รอบ </p>
+  <p class="note">อัปเดตข้อมูลจาก Asana โดยอัตโนมัติทุก ~15 นาที</p>
 </div>
 
 <script>
@@ -338,14 +356,27 @@
       ? Math.round((phase.completed_tasks / phase.total_tasks) * 100)
       : 0;
     const tasksHtml = phase.tasks
-      .map(
-        (t) => `
+      .map((t) => {
+        const subsHtml =
+          t.subtasks && t.subtasks.length > 0
+            ? `<ul class="subtask-list">${t.subtasks
+                .map(
+                  (s) =>
+                    `<li class="${s.completed ? "done" : ""}">
+                      <span class="mark">${s.completed ? "✓" : "–"}</span>
+                      <span>${escapeHtml(s.name)}</span>
+                      ${s.due_on ? `<span class="due">${formatDateShort(s.due_on)}</span>` : ""}
+                    </li>`
+                )
+                .join("")}</ul>`
+            : "";
+        return `
         <li class="${t.completed ? "done" : ""}">
           <span class="mark">${t.completed ? "✓" : "○"}</span>
-          <span class="task-name">${escapeHtml(t.name)}</span>
+          <span class="task-name">${escapeHtml(t.name)}${subsHtml}</span>
           <span class="due">${formatDateShort(t.due_on)}</span>
-        </li>`
-      )
+        </li>`;
+      })
       .join("");
 
     return `
