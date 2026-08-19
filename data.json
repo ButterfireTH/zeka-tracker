@@ -1,11 +1,11 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-08-19T07:50:15.407Z",
+  "last_updated": "2026-08-19T08:28:14.049Z",
   "summary": {
     "total_tasks": 18,
-    "completed_tasks": 0,
-    "remaining_tasks": 18,
-    "percent_complete": 0
+    "completed_tasks": 4,
+    "remaining_tasks": 14,
+    "percent_complete": 22
   },
   "phases": [
     {
@@ -40,12 +40,12 @@
       "name": "Phase 2 — ออกแบบ & Present กลุ่ม 1",
       "date_range": "6–15 ก.ค. 69",
       "total_tasks": 2,
-      "completed_tasks": 0,
-      "status": "not_started",
+      "completed_tasks": 2,
+      "status": "completed",
       "tasks": [
         {
           "name": "ออกแบบกลุ่ม 1: Lime Crisp, Rice Cracker, Latte Sticks, Corn Crisps (7 วัน)",
-          "completed": false,
+          "completed": true,
           "due_on": null,
           "subtasks": [
             {
@@ -72,7 +72,7 @@
         },
         {
           "name": "Present & รับ Feedback ลูกค้า กลุ่ม 1 (2 วัน)",
-          "completed": false,
+          "completed": true,
           "due_on": null,
           "subtasks": []
         }
@@ -83,18 +83,18 @@
       "name": "Phase 3 — ออกแบบ กลุ่ม 2 + Revision กลุ่ม 1",
       "date_range": "16–22 ก.ค. 69",
       "total_tasks": 3,
-      "completed_tasks": 0,
-      "status": "not_started",
+      "completed_tasks": 2,
+      "status": "in_progress",
       "tasks": [
         {
           "name": "Revision กลุ่ม 1 (6 working days, มีหยุดยาว 28–30 ก.ค.)",
-          "completed": false,
+          "completed": true,
           "due_on": null,
           "subtasks": []
         },
         {
           "name": "ออกแบบ Artwork กลุ่ม 2: Oatmeal, Cod Crisps, Crunch Rings, Hazelnuts (ใหม่)",
-          "completed": false,
+          "completed": true,
           "due_on": null,
           "subtasks": [
             {
