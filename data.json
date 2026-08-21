@@ -1,11 +1,11 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-08-21T02:11:01.945Z",
+  "last_updated": "2026-08-21T03:26:00.664Z",
   "summary": {
     "total_tasks": 18,
-    "completed_tasks": 4,
-    "remaining_tasks": 14,
-    "percent_complete": 22
+    "completed_tasks": 5,
+    "remaining_tasks": 13,
+    "percent_complete": 28
   },
   "phases": [
     {
@@ -31,7 +31,13 @@
           "name": "รวบรวมข้อมูลฉลาก และข้อมูล อย. เบื้องต้น",
           "completed": false,
           "due_on": "2026-07-03",
-          "subtasks": []
+          "subtasks": [
+            {
+              "name": "Coffee Candy",
+              "completed": false,
+              "due_on": null
+            }
+          ]
         }
       ],
       "is_current": true
@@ -83,8 +89,8 @@
       "name": "Phase 3 — ออกแบบ กลุ่ม 2 + Revision กลุ่ม 1",
       "date_range": "16–22 ก.ค. 69",
       "total_tasks": 3,
-      "completed_tasks": 2,
-      "status": "in_progress",
+      "completed_tasks": 3,
+      "status": "completed",
       "tasks": [
         {
           "name": "Revision กลุ่ม 1 (6 working days, มีหยุดยาว 28–30 ก.ค.)",
@@ -99,19 +105,19 @@
           "subtasks": [
             {
               "name": "Oatmeal, Cod Crisps",
-              "completed": false,
+              "completed": true,
               "due_on": null
             },
             {
               "name": "Crunch Rings, Hazelnuts",
-              "completed": false,
+              "completed": true,
               "due_on": null
             }
           ]
         },
         {
           "name": "✓ Sign-off กลุ่ม 1",
-          "completed": false,
+          "completed": true,
           "due_on": null,
           "subtasks": []
         }
@@ -134,8 +140,19 @@
         {
           "name": "ออกแบบ Artwork กลุ่ม 3: Coffee Candy, Lozenges, Sandwich Cookies (ใหม่) (6 วัน)",
           "completed": false,
-          "due_on": null,
-          "subtasks": []
+          "due_on": "2026-08-25",
+          "subtasks": [
+            {
+              "name": "Matcha Coffee Candy",
+              "completed": false,
+              "due_on": "2026-08-25"
+            },
+            {
+              "name": "Matcha Sandwich Cookies (Premium) ",
+              "completed": false,
+              "due_on": "2026-09-01"
+            }
+          ]
         },
         {
           "name": "Revision กลุ่ม 2 (5 วัน)",
