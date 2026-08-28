@@ -1,11 +1,11 @@
 {
   "project_name": "ZEKA — Packaging timeline & payment tracker",
-  "last_updated": "2026-08-28T00:00:16.086Z",
+  "last_updated": "2026-08-28T11:17:43.317Z",
   "summary": {
     "total_tasks": 18,
-    "completed_tasks": 5,
-    "remaining_tasks": 13,
-    "percent_complete": 28
+    "completed_tasks": 6,
+    "remaining_tasks": 12,
+    "percent_complete": 33
   },
   "phases": [
     {
@@ -128,8 +128,8 @@
       "name": "Phase 4 — Present กลุ่ม 2 + ออกแบบ กลุ่ม 3",
       "date_range": "23–30 ก.ค. 69",
       "total_tasks": 3,
-      "completed_tasks": 0,
-      "status": "not_started",
+      "completed_tasks": 1,
+      "status": "in_progress",
       "tasks": [
         {
           "name": "Present & รับ Feedback ลูกค้า กลุ่ม 2",
@@ -139,18 +139,23 @@
         },
         {
           "name": "ออกแบบ Artwork กลุ่ม 3: Coffee Candy, Lozenges, Sandwich Cookies (ใหม่) (6 วัน)",
-          "completed": false,
+          "completed": true,
           "due_on": "2026-08-25",
           "subtasks": [
             {
               "name": "Matcha Coffee Candy",
-              "completed": false,
+              "completed": true,
               "due_on": "2026-08-25"
             },
             {
               "name": "Matcha Sandwich Cookies (Premium) ",
               "completed": false,
               "due_on": "2026-09-01"
+            },
+            {
+              "name": "Lozenges",
+              "completed": true,
+              "due_on": "2026-08-25"
             }
           ]
         },
@@ -238,8 +243,8 @@
       "installment": 2,
       "percent": 30,
       "condition": "หลัง Sign-off กลุ่ม 1",
-      "due_on": null,
-      "completed": false
+      "due_on": "2026-08-21",
+      "completed": true
     },
     {
       "installment": 3,
